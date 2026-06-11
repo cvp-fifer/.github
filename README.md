@@ -79,7 +79,8 @@ new repo.
 
 ## Maintaining the templates
 
-Edit the form YAML in [`ISSUE_TEMPLATE/`](ISSUE_TEMPLATE/) only, then:
+Edit the form YAML in [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE/)
+only (GitHub requires that exact folder for org-default issue templates), then:
 
 ```sh
 uv run scripts/gen_issue_bodies.py

@@ -1,4 +1,4 @@
-<!-- GENERATED from ISSUE_TEMPLATE/01-bug.yml by scripts/gen_issue_bodies.py — do not edit.
+<!-- GENERATED from .github/ISSUE_TEMPLATE/01-bug.yml by scripts/gen_issue_bodies.py — do not edit.
      Regenerate: uv run scripts/gen_issue_bodies.py -->
 <!-- gh: gh issue create -R cvp-fifer/<repo> -t "<title>" -l bug -F <this file> — issue type "Bug" is applied by the web form only; set it via web/API if needed -->
 

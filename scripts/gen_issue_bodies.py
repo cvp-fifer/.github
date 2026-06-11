@@ -23,7 +23,7 @@ from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-FORMS_DIR = ROOT / "ISSUE_TEMPLATE"
+FORMS_DIR = ROOT / ".github" / "ISSUE_TEMPLATE"
 OUT_DIR = ROOT / "issue-bodies"
 
 
@@ -40,9 +40,9 @@ def guidance(attrs: dict, required: bool) -> str:
     return f"<!-- {' '.join(parts)} -->"
 
 
-def render(form: dict, src_name: str) -> str:
+def render(form: dict, src_rel: str) -> str:
     lines = [
-        f"<!-- GENERATED from ISSUE_TEMPLATE/{src_name} by scripts/gen_issue_bodies.py — do not edit.",
+        f"<!-- GENERATED from {src_rel} by scripts/gen_issue_bodies.py — do not edit.",
         "     Regenerate: uv run scripts/gen_issue_bodies.py -->",
     ]
     label_args = " ".join(f"-l {label}" for label in form.get("labels") or [])
@@ -83,7 +83,7 @@ def main() -> int:
     for src in sources:
         form = yaml.safe_load(src.read_text(encoding="utf-8"))
         out = OUT_DIR / f"{re.sub(r'^[0-9]+-', '', src.stem)}.md"
-        content = render(form, src.name)
+        content = render(form, str(src.relative_to(ROOT)))
         if check:
             if not out.exists() or out.read_text(encoding="utf-8") != content:
                 drifted.append(str(out.relative_to(ROOT)))

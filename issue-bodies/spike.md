@@ -1,4 +1,4 @@
-<!-- GENERATED from ISSUE_TEMPLATE/05-spike.yml by scripts/gen_issue_bodies.py — do not edit.
+<!-- GENERATED from .github/ISSUE_TEMPLATE/05-spike.yml by scripts/gen_issue_bodies.py — do not edit.
      Regenerate: uv run scripts/gen_issue_bodies.py -->
 <!-- gh: gh issue create -R cvp-fifer/<repo> -t "<title>" -l spike -F <this file> -->
 
