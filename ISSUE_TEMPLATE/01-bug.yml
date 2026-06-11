@@ -1,0 +1,72 @@
+# NOTE: `type: markdown` blocks render only in the web form — they NEVER appear
+# in the submitted issue body. The durable AI-section marker is therefore the
+# "🤖 " prefix on field labels, which renders identically from the web form and
+# from issue-bodies/ skeletons. Do not rely on a rendered divider.
+#
+# Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
+name: Bug report
+description: Something is broken or behaving wrong.
+type: Bug
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Required fields first. The 🤖 fields at the bottom help an AI agent pick this up — fill in what you know, skip what you don't.
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: "One sentence: what is broken, where."
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - S1 — blocks all work or loses data
+        - S2 — blocks a workflow, no workaround
+        - S3 — workaround exists or cosmetic
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps, from a clean start.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_actual
+    attributes:
+      label: Expected vs actual
+      placeholder: |
+        Expected: …
+        Actual: … (paste error output verbatim)
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: repo/app, OS, version or commit SHA
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **🤖 AI Agent Context** — optional; fill in what you know.
+  - type: textarea
+    id: code_pointers
+    attributes:
+      label: 🤖 Code pointers
+      placeholder: Files, functions, log lines likely involved.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 🤖 Constraints & out of scope
+      placeholder: "Don't touch X; out of scope: Y."

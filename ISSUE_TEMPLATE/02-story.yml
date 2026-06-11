@@ -1,0 +1,57 @@
+# NOTE: `type: markdown` blocks render only in the web form — they NEVER appear
+# in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
+# on field labels. Do not rely on a rendered divider.
+#
+# Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
+name: Feature / Story
+description: New capability, framed as a user story.
+type: Feature
+labels: ["feature"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Required fields first. The 🤖 fields at the bottom help an AI agent pick this up — fill in what you know, skip what you don't.
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      value: As a <user>, I want <capability>, so that <outcome>.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Checkable statements; each becomes a review gate.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: How to verify
+      placeholder: Steps a reviewer — human or agent — runs to confirm it works.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **🤖 AI Agent Context** — optional; fill in what you know.
+  - type: textarea
+    id: code_pointers
+    attributes:
+      label: 🤖 Code pointers
+      placeholder: Files, modules, prior art to start from.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 🤖 Constraints
+      placeholder: Patterns to follow, perf/security bounds.
+  - type: textarea
+    id: out_of_scope
+    attributes:
+      label: 🤖 Out of scope
+      placeholder: Explicitly not part of this story.

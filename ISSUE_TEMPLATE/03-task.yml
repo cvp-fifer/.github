@@ -1,0 +1,35 @@
+# NOTE: `type: markdown` blocks render only in the web form — they NEVER appear
+# in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
+# on field labels. Do not rely on a rendered divider.
+#
+# Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
+name: Task / Chore
+description: Concrete work item — no story framing needed.
+type: Task
+labels: ["task"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs doing
+      placeholder: One paragraph max.
+    validations:
+      required: true
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done when
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **🤖 AI Agent Context** — optional; fill in what you know.
+  - type: textarea
+    id: code_pointers
+    attributes:
+      label: 🤖 Code pointers
+      placeholder: Files, functions, prior art to start from.

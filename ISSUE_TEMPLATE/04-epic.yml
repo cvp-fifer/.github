@@ -1,0 +1,50 @@
+# NOTE: `type: markdown` blocks render only in the web form — they NEVER appear
+# in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
+# on field labels. Do not rely on a rendered divider.
+#
+# TODO: add `type: Epic` once the custom org issue type exists
+#   (gh api orgs/cvp-fifer/issue-types -f name=Epic ...) — a form referencing a
+#   nonexistent type is flagged invalid in the chooser.
+#
+# Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
+name: Epic
+description: Multi-issue outcome tracked via sub-issues.
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Attach child work as **sub-issues** after creating this epic; the child work plan below is a planning fallback until children exist.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      placeholder: What changes for users or the program when this is done.
+    validations:
+      required: true
+  - type: textarea
+    id: done_when
+    attributes:
+      label: Done when
+      description: Observable end-state, not a task list.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: children
+    attributes:
+      label: Child work plan
+      description: Planned child issues; convert to sub-issues as they're filed.
+      value: |
+        - [ ]
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **🤖 AI Agent Context** — optional; fill in what you know.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: 🤖 Constraints & out of scope
+      placeholder: Boundaries the child work must respect.

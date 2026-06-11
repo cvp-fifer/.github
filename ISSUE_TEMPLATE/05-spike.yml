@@ -1,0 +1,48 @@
+# NOTE: `type: markdown` blocks render only in the web form — they NEVER appear
+# in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
+# on field labels. Do not rely on a rendered divider.
+#
+# TODO: add `type: Spike` once the custom org issue type exists
+#   (gh api orgs/cvp-fifer/issue-types -f name=Spike ...) — a form referencing a
+#   nonexistent type is flagged invalid in the chooser.
+#
+# Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
+name: Spike / Research
+description: Timeboxed investigation that informs a decision.
+labels: ["spike"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      placeholder: The decision this spike informs, phrased as a question.
+    validations:
+      required: true
+  - type: dropdown
+    id: timebox
+    attributes:
+      label: Timebox
+      options:
+        - 2 hours
+        - Half day
+        - 1 day
+        - 2–3 days
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      placeholder: ADR draft, recommendation comment, or prototype branch.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **🤖 AI Agent Context** — optional; fill in what you know.
+  - type: textarea
+    id: starting_points
+    attributes:
+      label: 🤖 Starting points
+      placeholder: Links, prior art, code to read first.

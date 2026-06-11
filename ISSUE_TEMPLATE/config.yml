@@ -1,0 +1,4 @@
+# Blank issues stay enabled: the primary filer works via `gh issue create
+# --body-file`, which GitHub treats as a blank issue. Forms are an affordance
+# for web users, not a gate. No contact_links — private org, no external users.
+blank_issues_enabled: true
