@@ -2,13 +2,10 @@
 # in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
 # on field labels. Do not rely on a rendered divider.
 #
-# TODO: add `type: Epic` once the custom org issue type exists
-#   (gh api orgs/cvp-fifer/issue-types -f name=Epic ...) — a form referencing a
-#   nonexistent type is flagged invalid in the chooser.
-#
 # Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
 name: Epic
 description: Multi-issue outcome tracked via sub-issues.
+type: Epic
 labels: ["epic"]
 body:
   - type: markdown

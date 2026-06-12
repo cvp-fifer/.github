@@ -2,13 +2,10 @@
 # in the submitted issue body. The durable AI-section marker is the "🤖 " prefix
 # on field labels. Do not rely on a rendered divider.
 #
-# TODO: add `type: Spike` once the custom org issue type exists
-#   (gh api orgs/cvp-fifer/issue-types -f name=Spike ...) — a form referencing a
-#   nonexistent type is flagged invalid in the chooser.
-#
 # Editing this file? Regenerate the CLI skeletons: uv run scripts/gen_issue_bodies.py
 name: Spike / Research
 description: Timeboxed investigation that informs a decision.
+type: Spike
 labels: ["spike"]
 body:
   - type: textarea
