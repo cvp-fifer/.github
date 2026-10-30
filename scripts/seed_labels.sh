@@ -5,7 +5,14 @@
 set -euo pipefail
 
 ORG=cvp-fifer
-REPOS=(fifer fifer-web fifer-desktop evs-guardian fifer-inspect fifer-docs)
+# Current org repos carrying the issue forms. Override without editing:
+#   REPOS="kernel web" ./scripts/seed_labels.sh
+if [[ -n "${REPOS:-}" ]]; then
+  # shellcheck disable=SC2206
+  REPOS=(${REPOS})
+else
+  REPOS=(kernel web desktop infra fifer-os-meta)
+fi
 
 seed() { # name color description
   for repo in "${REPOS[@]}"; do

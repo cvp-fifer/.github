@@ -51,10 +51,19 @@ body:
     validations:
       required: true
   - type: input
+    id: page_section
+    attributes:
+      label: Page / section
+      description: >
+        Where you were: name the page/section/panel as the app itself names
+        it (its title or heading). If the app distinguishes modes (local vs
+        connected, web vs desktop), note which. Skip for backend/API issues.
+      placeholder: a settings page, a specific panel or modal, a list view
+  - type: input
     id: environment
     attributes:
       label: Environment
-      placeholder: repo/app, OS, version or commit SHA
+      placeholder: app + version/commit, OS/platform, which client (web or desktop) and mode
   - type: markdown
     attributes:
       value: |

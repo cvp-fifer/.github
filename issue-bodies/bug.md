@@ -21,9 +21,13 @@
 
 <!-- (required) Expected: … / Actual: … (paste error output verbatim) -->
 
+### Page / section
+
+<!-- (optional) Where you were: name the page/section/panel as the app itself names it (its title or heading). If the app distinguishes modes (local vs connected, web vs desktop), note which. Skip for backend/API issues. e.g. a settings page, a specific panel or modal, a list view -->
+
 ### Environment
 
-<!-- (optional) repo/app, OS, version or commit SHA -->
+<!-- (optional) app + version/commit, OS/platform, which client (web or desktop) and mode -->
 
 ### 🤖 Code pointers
 
