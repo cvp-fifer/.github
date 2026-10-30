@@ -23,6 +23,25 @@ acceptance criteria, how to verify), then optional **🤖 fields** that give an
 AI agent the context to pick the work up: code pointers, constraints, out of
 scope. Fill in what you know, skip what you don't.
 
+## Filing a good issue
+
+A few habits that make issues actionable:
+
+- **Pick the right form.** Broken behavior → bug; a missing capability →
+  story; a concrete work item → task. (See [the table above](#picking-a-template).)
+- **One finding per issue.** Two defects in one issue can't be tracked,
+  triaged, or closed independently.
+- **Name the page/section as the app itself names it** — its title or
+  heading, and the mode you were in if the app distinguishes them. “The
+  list doesn't scroll” is hard to act on; “the items list on a settings
+  page doesn't scroll” is a work order.
+- **Everything is reportable.** A wrong alignment or mislabeled button is
+  still a bug — file it with the cosmetic severity option. The triage
+  pass, not the filer, decides priority.
+- **Duplicates welcome.** If you're not sure whether something is already
+  filed, file it anyway and mention the possible twin. Deduplication
+  happens after filing — never let it stop a report.
+
 ## Filing from the CLI (humans and agents)
 
 The web forms and the skeletons in [`issue-bodies/`](issue-bodies/) produce
@@ -44,7 +63,7 @@ skeletons carry the same headings. Agents parse issues by these headings:
 
 | Template | Headings, in order |
 |---|---|
-| bug | Summary · Severity · Steps to reproduce · Expected vs actual · Environment · 🤖 Code pointers · 🤖 Constraints & out of scope |
+| bug | Summary · Severity · Steps to reproduce · Expected vs actual · Page / section · Environment · 🤖 Code pointers · 🤖 Constraints & out of scope |
 | story | Story · Acceptance criteria · How to verify · 🤖 Code pointers · 🤖 Constraints · 🤖 Out of scope |
 | task | What needs doing · Done when · 🤖 Code pointers |
 | epic | Outcome · Done when · Child work plan · 🤖 Constraints & out of scope |
@@ -91,3 +110,16 @@ Never hand-edit `issue-bodies/` — it is generated, and CI
 divergence. Note that form `markdown` elements render only in the web form,
 never in the submitted issue — the `🤖 ` label prefix, not a divider, is the
 durable section marker.
+
+### Contributing to this repo
+
+Everything here lands in every repo's issue picker, so its content has a
+hard visibility rule: **generic mechanism only — no project specifics.**
+
+Do not add: product or surface names, internal code names for features or
+views, hostnames or environment/lane names, internal milestone or phase
+vocabulary, or enumerations of the org's other repositories beyond the
+`cvp-fifer/<repo>` placeholder. The same rule applies to form wording, this
+README, the profile README, and commit messages. Surface-specific filing
+guidance (real page names, routing between repos) belongs in each project's
+own contributing docs — not here.
